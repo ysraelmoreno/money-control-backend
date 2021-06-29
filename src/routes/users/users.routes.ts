@@ -1,4 +1,4 @@
-import { Router, Request, Response, NextFunction } from "express";
+import { Router, Request, Response, NextFunction, request } from "express";
 import { v4 } from "uuid";
 
 const usersRouter = Router();
@@ -135,7 +135,7 @@ usersRouter.post(
       date: new Intl.DateTimeFormat("pt-BR").format(new Date()),
     };
 
-    findUser?.statement.push(newStatement);
+    findUser.statement.push(newStatement);
 
     return response.json(newStatement);
   }
